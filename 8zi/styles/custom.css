@@ -1,0 +1,75 @@
+:root {
+  --primary: #C41E3A;
+  --primary-dark: #8B0000;
+  --primary-purple: #4A154B;
+  --primary-gold: #FFD700;
+}
+
+.border-primary-gold {
+  border: 1px solid var(--primary-gold);
+  border-radius: 1rem;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.bg-gradient-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  transform: translateX(-100%);
+  animation: shimmer 3s infinite;
+}
+
+.language-switcher {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 50;
+  perspective: 1000px;
+}
+
+.language-button {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 2px solid var(--primary-gold);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.language-button:hover {
+  transform: translateY(-2px) rotateX(5deg);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 10px 20px rgba(0, 0, 0, 0.1),
+    0 3px 6px rgba(0, 0, 0, 0.05);
+}
+
+.language-button:active {
+  transform: translateY(1px) rotateX(0deg);
+}
+
+.input-hover-effect:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(196, 30, 58, 0.1);
+}
+
+.button-hover-effect:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(196, 30, 58, 0.2);
+}
+
